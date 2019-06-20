@@ -52,15 +52,20 @@
 			});
 		};
 
-
+		
 		tableau.registerConnector(myConnector);
+
+
+
+		tableau.submit();
+		
 
 	} else {
 		window.location.replace("https://abstract-gong360.develgs.com/v1/mob/signin");
 		// $(document).ready(function () {
 		// 	$("#submitButton").click(function () {
 		// 		tableau.connectionName = "USGS Earthquake Feed";
-		// 		tableau.submit();
+		// 		
 		// 	});
 		// });
 	}
