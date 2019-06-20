@@ -56,7 +56,7 @@
 		tableau.registerConnector(myConnector);
 
 	} else {
-		window.location.url = "https://abstract-gong360.develgs.com/v1/mob/signin"
+		window.location.replace("https://abstract-gong360.develgs.com/v1/mob/signin");
 		// $(document).ready(function () {
 		// 	$("#submitButton").click(function () {
 		// 		tableau.connectionName = "USGS Earthquake Feed";
