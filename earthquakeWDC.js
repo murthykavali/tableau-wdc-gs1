@@ -5,7 +5,7 @@
 	debugger;
 	if (token) {
 
-		alert("Token Found");
+
 	
 		//Make call and dance. !!
 		var myConnector = tableau.makeConnector();
@@ -34,6 +34,8 @@
 		};
 
 		myConnector.getData = function (table, doneCallback) {
+			console.log(table);
+			
 			$.getJSON("https://tab-test1.free.beeceptor.com/sample-data", function (resp) {
 				var tableData = [];
 
@@ -43,7 +45,6 @@
 						"id": resp[i].id,
 						"name": resp[i].name,
 						"age": resp[i].age
-
 					});
 				}
 
