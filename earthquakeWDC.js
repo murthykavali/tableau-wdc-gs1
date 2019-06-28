@@ -3,7 +3,7 @@
 	var a = new URLSearchParams(window.location.search);
 	var token = a.get("token");
 	debugger;
-	if (token) {
+	if (true) {
 
 
 	
@@ -36,21 +36,32 @@
 		myConnector.getData = function (table, doneCallback) {
 			console.log(table);
 			
-			$.getJSON("https://tab-test1.free.beeceptor.com/sample-data", function (resp) {
-				var tableData = [];
+			for (var i = 0, len = resp.length; i < len; i++) {
+				tableData.push({
+					"id": resp[i].id,
+					"name": resp[i].name,
+					"age": resp[i].age
+				});
+			}
 
-				// Iterate over the JSON object
-				for (var i = 0, len = resp.length; i < len; i++) {
-					tableData.push({
-						"id": resp[i].id,
-						"name": resp[i].name,
-						"age": resp[i].age
-					});
-				}
+			table.appendRows(tableData);
+			doneCallback();
+			
+			// $.getJSON("https://tab-test1.free.beeceptor.com/sample-data", function (resp) {
+			// 	var tableData = [];
 
-				table.appendRows(tableData);
-				doneCallback();
-			});
+			// 	// Iterate over the JSON object
+			// 	for (var i = 0, len = resp.length; i < len; i++) {
+			// 		tableData.push({
+			// 			"id": resp[i].id,
+			// 			"name": resp[i].name,
+			// 			"age": resp[i].age
+			// 		});
+			// 	}
+
+			// 	table.appendRows(tableData);
+			// 	doneCallback();
+			// });
 		};
 
 		
